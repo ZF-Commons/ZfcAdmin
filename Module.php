@@ -63,7 +63,7 @@ class Module implements
         return array(
             Loader\AutoloaderFactory::STANDARD_AUTOLOADER => array(
                 Loader\StandardAutoloader::LOAD_NS => array(
-                    __NAMESPACE__           => __DIR__ . '/src/' . __NAMESPACE__,
+                    __NAMESPACE__ => __DIR__ . '/src/' . __NAMESPACE__,
                 ),
             ),
         );
