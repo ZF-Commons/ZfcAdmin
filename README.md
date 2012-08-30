@@ -8,7 +8,7 @@ soon to come
 
 ## Installation
 
-    ### Main Setup
+### Main Setup
 
 1. Clone this project into your `./vendor/` directory and enable it in your
    `application.config.php` file.
@@ -36,7 +36,7 @@ Override the built in Controller view
     * Default page: zfc-admin/admin/index.phtml
 
 
-NOTE: Your module must be loaded after ZfcUser or the overriding will not work.  To do this, place your module after ZfcUser in the `modules` key of your application configuration (`config/application.config.php`), or do the following:
+NOTE: Your module must be loaded after ZfcAdmin or the overriding will not work.  To do this, place your module after ZfcAdmin in the `modules` key of your application configuration (`config/application.config.php`), or do the following:
 
 ```php
 <?php
@@ -46,7 +46,7 @@ class Module
 {
     public function init($moduleManager)
     {
-        $moduleManager->loadModule('ZfcUser');
+        $moduleManager->loadModule('ZfcAdmin');
     }
 }
 ```
