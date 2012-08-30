@@ -1,4 +1,4 @@
-# DoctrineDataFixture Module for Zend Framework 2
+# ZfcAdmin Module for Zend Framework 2
 
 Version 0.0.1 Created by Jurian Sluiman
 
