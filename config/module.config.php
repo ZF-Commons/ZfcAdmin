@@ -41,6 +41,11 @@
  */
 
 return array(
+    'controllers' => array(
+        'invokables' => array(
+            'ZfcAdmin\Controller\AdminController' => 'ZfcAdmin\Controller\AdminController',
+        ),
+    ),
     'zfcadmin' => array(
         'use_admin_layout'      => true,
         'admin_layout_template' => 'layout/admin',
