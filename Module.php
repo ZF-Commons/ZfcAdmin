@@ -43,6 +43,8 @@ namespace ZfcAdmin;
 
 use Zend\ModuleManager\Feature;
 use Zend\Loader;
+use Zend\EventManager\EventInterface;
+use Zend\Mvc\MvcEvent;
 
 /**
  * Module class for ZfcAdmin
@@ -110,7 +112,7 @@ class Module implements
                 return;
             }
 
-            $controller = $e->getControllerClass();
+            $controller = $e->getTarget();
             $controller->layout($layout);
         }, 100);
     }
