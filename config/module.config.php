@@ -53,6 +53,10 @@ return array(
 
     'navigation' => array(
         'admin' => array(
+            'dashboard' => array(
+                'label' => 'Home',
+                'route' => 'admin',
+            ),
         ),
     ),
 
