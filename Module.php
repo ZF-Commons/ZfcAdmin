@@ -118,7 +118,7 @@ class Module implements
 
         if($match instanceof RouteMatch) {
             $exp = explode('/', $match->getMatchedRouteName());
-            if($exp[0] == 'admin') {
+            if($exp[0] == 'zfcadmin') {
                 $layout = $config['zfcadmin']['admin_layout_template'];
                 $controller = $e->getTarget();
                 $controller->layout($layout);

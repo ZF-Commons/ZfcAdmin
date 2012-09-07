@@ -53,12 +53,16 @@ return array(
 
     'navigation' => array(
         'admin' => array(
+            'zfcadmin' => array(
+                'label' => 'HOME',
+                'route' => 'zfcadmin',
+            ),
         ),
     ),
 
     'router' => array(
         'routes' => array(
-            'admin' => array(
+            'zfcadmin' => array(
                 'type' => 'literal',
                 'options' => array(
                     'route'    => '/admin',
