@@ -45,6 +45,7 @@ use Zend\ModuleManager\Feature;
 use Zend\Loader;
 use Zend\EventManager\EventInterface;
 use Zend\Mvc\MvcEvent;
+use Zend\Mvc\Router\RouteMatch;
 
 /**
  * Module class for ZfcAdmin
@@ -98,22 +99,30 @@ class Module implements
     {
         $app = $e->getParam('application');
         $sm  = $app->getServiceManager();
-        $em  = $app->getEventManager()->getSharedManager();
+        $em = $app->getEventManager();
 
+        $em->attach(\Zend\Mvc\MvcEvent::EVENT_DISPATCH, array($this, 'selectLayoutBasedOnRoute'));
+    }
+
+    public function selectLayoutBasedOnRoute(\Zend\Mvc\MvcEvent $e)
+    {
+        $app = $e->getParam('application');
+        $sm  = $app->getServiceManager();
         $config = $sm->get('config');
+
         if (false === $config['zfcadmin']['use_admin_layout']) {
             return;
         }
 
-        $layout = $config['zfcadmin']['admin_layout_template'];
-        $em->attach('Zend\Stdlib\DispatchableInterface', MvcEvent::EVENT_DISPATCH, function($e) use ($layout) {
-            $route = $e->getRouteMatch()->getMatchedRouteName();
-            if (0 !== strpos($route, 'admin')) {
-                return;
-            }
+        $match = $e->getRouteMatch();
 
-            $controller = $e->getTarget();
-            $controller->layout($layout);
-        }, 100);
+        if($match instanceof RouteMatch) {
+            $exp = explode('/', $match->getMatchedRouteName());
+            if($exp[0] == 'admin') {
+                $layout = $config['zfcadmin']['admin_layout_template'];
+                $controller = $e->getTarget();
+                $controller->layout($layout);
+            }
+        }
     }
 }
