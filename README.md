@@ -18,14 +18,14 @@ soon to come
 
 ## Enable Access restriction
 
-Restrict access to unauthorized Userd.
+Restrict access to unauthorized Users.
 
 ### Solution
 
 1. Install BjyAuthorize and enable in you application.config.php
 2. Import data/data.sql into your database.
 3. Create a user with ZfcUser and set the user_id and role_id in the database
-    (e.g. user_d = 1, role_id = admin)
+    (e.g. user_id = 1, role_id = admin)
     
 ## How To override Admin Layout
 
