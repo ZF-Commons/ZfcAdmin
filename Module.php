@@ -103,6 +103,12 @@ class Module implements
         $em->attach(MvcEvent::EVENT_DISPATCH, array($this, 'selectLayoutBasedOnRoute'));
     }
 
+    /**
+     * Select the admin layout based on route name
+     *
+     * @param  MvcEvent $e
+     * @return void
+     */
     public function selectLayoutBasedOnRoute(MvcEvent $e)
     {
         $app    = $e->getParam('application');
