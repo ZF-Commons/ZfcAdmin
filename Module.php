@@ -101,10 +101,10 @@ class Module implements
         $sm  = $app->getServiceManager();
         $em = $app->getEventManager();
 
-        $em->attach(\Zend\Mvc\MvcEvent::EVENT_DISPATCH, array($this, 'selectLayoutBasedOnRoute'));
+        $em->attach(MvcEvent::EVENT_DISPATCH, array($this, 'selectLayoutBasedOnRoute'));
     }
 
-    public function selectLayoutBasedOnRoute(\Zend\Mvc\MvcEvent $e)
+    public function selectLayoutBasedOnRoute(MvcEvent $e)
     {
         $app = $e->getParam('application');
         $sm  = $app->getServiceManager();
