@@ -53,12 +53,16 @@ return array(
 
     'navigation' => array(
         'admin' => array(
+            'zfcadmin' => array(
+                'label' => 'HOME',
+                'route' => 'zfcadmin',
+            ),
         ),
     ),
 
     'router' => array(
         'routes' => array(
-            'admin' => array(
+            'zfcadmin' => array(
                 'type' => 'literal',
                 'options' => array(
                     'route'    => '/admin',
@@ -68,6 +72,16 @@ return array(
                     ),
                 ),
                 'may_terminate' => true,
+            ),
+        ),
+    ),
+
+    'bjyauthorize' => array(
+        /* Enable Route Guard
+         */
+        'guards' => array(
+            'BjyAuthorize\Guard\Route' => array(
+                array('route' => 'admin', 'roles' => array('admin')),
             ),
         ),
     ),

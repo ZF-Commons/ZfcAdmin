@@ -1,6 +1,6 @@
 # ZfcAdmin Module for Zend Framework 2
 
-Version 0.0.1 Created by Jurian Sluiman
+Version 0.0.1 Created by [Jurian Sluiman](http://juriansluiman.nl/en/) and [Martin Shwalbe](https://github.com/Hounddog)
 
 ## Introduction
 
@@ -16,6 +16,17 @@ soon to come
 ## Usage
 soon to come
 
+## Enable Access restriction
+
+Restrict access to unauthorized Userd.
+
+### Solution
+
+1. Install BjyAuthorize and enable in you application.config.php
+2. Import data/data.sql into your database.
+3. Create a user with ZfcUser and set the user_id and role_id in the database
+    (e.g. user_d = 1, role_id = admin)
+    
 ## How To override Admin Layout
 
 Override the built in admin layout with your custom layout
@@ -36,19 +47,5 @@ Override the built in Controller view
     * Default page: zfc-admin/admin/index.phtml
 
 
-NOTE: Your module must be loaded after ZfcAdmin or the overriding will not work.  To do this, place your module after ZfcAdmin in the `modules` key of your application configuration (`config/application.config.php`), or do the following:
+NOTE: Your module must be loaded after ZfcAdmin or the overriding will not work.  To do this, place your module after ZfcAdmin in the `modules` key of your application configuration (`config/application.config.php`).
 
-```php
-<?php
-namespace Foo;
-
-class Module
-{
-    public function init($moduleManager)
-    {
-        $moduleManager->loadModule('ZfcAdmin');
-    }
-}
-```
-
-NOTE: As of Zend Framework RC1 it is no longer needed to clone the `ModuleEvent` in the `init()` method.ules key or 
