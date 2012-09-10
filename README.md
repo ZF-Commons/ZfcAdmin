@@ -14,7 +14,58 @@ soon to come
    `application.config.php` file.
 
 ## Usage
-soon to come
+
+### Add own Modules to admin path
+
+When creating your own modules you are required to register these with the zfcadmin path as child_routes
+
+In your module.config.php add the route as shown in the example
+
+    'router' => array(
+        'routes' => array(
+            'zfcadmin' => array(
+                'child_routes' => array(
+                    'mymodule' => array(
+                        'type' => 'Literal',
+                        'options' => array(
+                            'route' => '/mymodule',
+                            'defaults' => array(
+                                'controller' => 'mycontroller',
+                                'action'     => 'index',
+                            ),
+                        ),
+                        'child_routes' =>array(
+                            'mychildroute' => array(
+                                'type' => 'literal',
+                                'options' => array(
+                                    'route' => '/',
+                                    'defaults' => array(
+                                        'controller' => 'mycontroller',
+                                        'action'     => 'myaction',
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+        ),
+    ),
+
+
+### Add your routes to the Navigation
+
+You can inject your routes from your own modules into the admin navigation as shown below
+
+
+    'navigation' => array(
+        'admin' => array(
+            'mynavigation' => array(
+                'label' => 'My Module',
+                'route' => 'zfcadmin/myroute',
+            ),
+        ),
+    ),
 
 ## Enable Access restriction
 
