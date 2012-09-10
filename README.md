@@ -20,7 +20,7 @@ soon to come
 When creating your own modules you are required to register these with the zfcadmin path as child_routes
 
 In your module.config.php add the route as shown in the example
-`
+
     'router' => array(
         'routes' => array(
             'zfcadmin' => array(
@@ -51,13 +51,13 @@ In your module.config.php add the route as shown in the example
             ),
         ),
     ),
-`
+
 
 ### Add your routes to the Navigation
 
 You can inject your routes from your own modules into the admin navigation as shown below
 
-`
+
     'navigation' => array(
         'admin' => array(
             'mynavigation' => array(
@@ -66,7 +66,7 @@ You can inject your routes from your own modules into the admin navigation as sh
             ),
         ),
     ),
-`
+
 ## Enable Access restriction
 
 Restrict access to unauthorized Users.
