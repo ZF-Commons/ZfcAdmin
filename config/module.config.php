@@ -52,12 +52,7 @@ return array(
     ),
 
     'navigation' => array(
-        'admin' => array(
-            'zfcadmin' => array(
-                'label' => 'HOME',
-                'route' => 'zfcadmin',
-            ),
-        ),
+        'admin' => array(),
     ),
 
     'router' => array(
