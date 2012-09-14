@@ -22,6 +22,9 @@
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.*"
     },
+    "suggest": {
+        "bjyoungblood/bjy-authorize": "dev-master"
+    },
     "autoload": {
         "psr-0": {
             "ZfcAdmin": "src/"
