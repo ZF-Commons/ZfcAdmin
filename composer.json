@@ -1,0 +1,36 @@
+{
+    "name": "zf-commons/zfc-admin",
+    "description": "A generic Admin module for ZF2.",
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "keywords": [
+        "zf2"
+    ],
+    "homepage": "https://github.com/juriansluiman/ZfcAdmin",
+    "authors": [
+        {
+            "name": "Jurian Sluiman ",
+            "email": "jurian@juriansluiman.nl",
+            "homepage": "http://juriansluiman.nl/en/"
+        },
+        {
+            "name": "Martin Shwalbe",
+            "email": "martin.shwalbe@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*"
+    },
+    "suggest": {
+        "bjyoungblood/bjy-authorize": "Access control to protect ZfcAdmin against unauthorized users"
+    },
+    "autoload": {
+        "psr-0": {
+            "ZfcAdmin": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
