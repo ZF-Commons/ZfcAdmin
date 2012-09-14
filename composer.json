@@ -23,7 +23,7 @@
         "zendframework/zendframework": "2.*"
     },
     "suggest": {
-        "bjyoungblood/bjy-authorize": "dev-master"
+        "bjyoungblood/bjy-authorize": "Access control to protect ZfcAdmin against unauthorized users"
     },
     "autoload": {
         "psr-0": {
