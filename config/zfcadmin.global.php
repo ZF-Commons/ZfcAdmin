@@ -31,11 +31,22 @@ $settings = array(
     /**
      * End of ZfcAdmin configuration
      */
+    
 );
 
 /**
  * You do not need to edit below this line
  */
 return array(
-    'zfcadmin' => $settings
+    'zfcadmin' => $settings,
+    
+    'bjyauthorize' => array(
+        /* Enable Route Guard
+         */
+        'guards' => array(
+            'BjyAuthorize\Guard\Route' => array(
+                array('route' => 'zfcadmin', 'roles' => array('admin')),
+            ),
+        ),
+    ),
 );

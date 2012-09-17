@@ -71,15 +71,7 @@ return array(
         ),
     ),
 
-    'bjyauthorize' => array(
-        /* Enable Route Guard
-         */
-        'guards' => array(
-            'BjyAuthorize\Guard\Route' => array(
-                array('route' => 'admin', 'roles' => array('admin')),
-            ),
-        ),
-    ),
+    
 
     'view_manager' => array(
         'template_path_stack' => array(
