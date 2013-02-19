@@ -77,7 +77,7 @@ Restrict access to unauthorized Users.
 2. Import data/data.sql into your database.
 3. Create a user with ZfcUser and set the user_id and role_id in the database
     (e.g. user_id = 1, role_id = admin)
-    
+
 ## How To override Admin Layout
 
 Override the built in admin layout with your custom layout
@@ -100,3 +100,16 @@ Override the built in Controller view
 
 NOTE: Your module must be loaded after ZfcAdmin or the overriding will not work.  To do this, place your module after ZfcAdmin in the `modules` key of your application configuration (`config/application.config.php`).
 
+NOTE: If you can not put your module after ZfcAdmin for some reasons you can override template in template map:
+
+    return array(
+        ...
+        'view_manager' => array(
+            ...
+            'template_map' => array(
+                ...
+                // use module/Application/view/layout/admin.phtml as Admin Layout
+                'layout/admin' => __DIR__ . '/../view/layout/admin.phtml',
+            ),
+        ),
+    );
