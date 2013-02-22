@@ -119,13 +119,16 @@ class Module implements
             return;
         }
 
-        $match = $e->getRouteMatch();
-        if (!$match instanceof RouteMatch || 0 !== strpos($match->getMatchedRouteName(), 'zfcadmin')) {
+        $match      = $e->getRouteMatch();
+        $controller = $e->getTarget();
+        if (!$match instanceof RouteMatch
+            || 0 !== strpos($match->getMatchedRouteName(), 'zfcadmin')
+            || $controller->getEvent()->getResult()->terminate()
+        ) {
             return;
         }
 
         $layout     = $config['zfcadmin']['admin_layout_template'];
-        $controller = $e->getTarget();
         $controller->layout($layout);
     }
 }
