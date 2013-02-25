@@ -39,14 +39,27 @@ $settings = array(
  */
 return array(
     'zfcadmin' => $settings,
-    
+   
+    /**
+     * Default BjyAuthorize configuration for ACL
+     */ 
     'bjyauthorize' => array(
-        /* Enable Route Guard
-         */
         'guards' => array(
             'BjyAuthorize\Guard\Route' => array(
                 array('route' => 'zfcadmin', 'roles' => array('admin')),
             ),
+        ),
+    ),
+
+    /**
+     * Default ZfcRbac configuration for RBAC
+     */
+    'zfcrbac' => array(
+        'firewall_route' => true,
+        'firewalls' => array(
+            'ZfcRbac\Firewall\Route' => array(
+                'zfcadmin' => array('route' => '^zfcadmin/*', 'roles' => 'admin')
+            )
         ),
     ),
 );
