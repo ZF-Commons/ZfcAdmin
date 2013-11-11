@@ -58,9 +58,9 @@ return array(
     'router' => array(
         'routes' => array(
             'zfcadmin' => array(
-                'type' => 'literal',
+                'type' => 'segment',
                 'options' => array(
-                    'route'    => '/admin',
+                    'route'    => '/admin[/]',
                     'defaults' => array(
                         'controller' => 'ZfcAdmin\Controller\AdminController',
                         'action'     => 'index',
