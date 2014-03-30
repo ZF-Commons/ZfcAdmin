@@ -41,6 +41,16 @@
  */
 
 return array(
+    'translator' => array(
+        'translation_file_patterns' => array(
+            array(
+                'type'     => 'gettext',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern'  => '%s.mo',
+            ),
+        ),
+    ),
+
     'controllers' => array(
         'invokables' => array(
             'ZfcAdmin\Controller\AdminController' => 'ZfcAdmin\Controller\AdminController',
@@ -71,7 +81,7 @@ return array(
         ),
     ),
 
-    
+
 
     'view_manager' => array(
         'template_path_stack' => array(
