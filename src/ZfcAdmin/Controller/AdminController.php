@@ -59,7 +59,7 @@ use Zend\Mvc\Controller\AbstractActionController;
  * return array(
  *     'router' => array(
  *         'routes' => array(
- *             'admin' => array(
+ *             'zfcadmin' => array(
  *                 'options' => array(
  *                     'defaults' => array(
  *                         'controller' => 'MyFoo\Controller\OtherController',
