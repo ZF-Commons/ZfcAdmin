@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <?php echo $this->headTitle('ZfcAdmin - Zend Framework 2 Admin Interface')->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?php echo $this->headTitle('ZfcAdmin - Zend Framework 2 ' . $this->translate('Admin Interface'))->setSeparator(' - ')->setAutoEscape(false) ?>
 
     <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
@@ -47,7 +47,7 @@
       <hr>
 
       <footer>
-        <p>&copy; 2005 - 2012 by Zend Technologies Ltd. All rights reserved.</p>
+        <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
       </footer>
 
     </div> <!-- /container -->
