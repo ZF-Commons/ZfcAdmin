@@ -5,40 +5,43 @@
     <meta charset="utf-8">
     <?php echo $this->headTitle('ZfcAdmin - Zend Framework 2 Admin Interface')->setSeparator(' - ')->setAutoEscape(false) ?>
 
-    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') 
+                                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge') 
+    ?>
 
     <!-- Le styles -->
-    <?php echo $this->headLink()->prependStylesheet('//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css') ?>
+    <?php echo $this->headLink()->prependStylesheet('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css') ?>
 
     <!-- Scripts -->
-    <?php echo $this->headScript()->prependFile('//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js')
-                                  ->prependFile('//code.jquery.com/jquery.min.js')
-                                  ->prependFile('//html5shiv.googlecode.com/svn/trunk/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',)) ?>
+    <?php echo $this->headScript()->prependFile('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
+                                  ->prependFile('https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+                                  ->prependFile('https://oss.maxcdn.com/respond/1.4.2/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                                  ->prependFile('https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js',   'text/javascript', array('conditional' => 'lt IE 9',)) 
+    ?>
 
   </head>
 
-  <body>
+  <body style="padding-top: 70px;">
 
-    <div class="navbar">
-      <div class="navbar-inner">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="<?php echo $this->url('zfcadmin') ?>">ZfcAdmin</a>
-          <div class="nav-collapse">
-            <?php echo $this->navigation('admin_navigation')
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<?php echo $this->url('zfcadmin') ?>">ZfcAdmin</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <?php echo $this->navigation('admin_navigation')
                             ->menu()
-                            ->setUlClass('nav')
+                            ->setUlClass('nav navbar-nav')
                             ->setMaxDepth(0)
                             ->setRenderInvisible(false)?>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
 
     <div class="container">
 
@@ -47,7 +50,7 @@
       <hr>
 
       <footer>
-        <p>&copy; 2005 - 2012 by Zend Technologies Ltd. All rights reserved.</p>
+        <p>&copy; 2005 - <?php echo date('Y') ?> by Zend Technologies Ltd. All rights reserved.</p>
       </footer>
 
     </div> <!-- /container -->
