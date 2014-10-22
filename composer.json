@@ -20,7 +20,11 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.*"
+        "zendframework/zend-modulemanager": "2.*",
+        "zendframework/zend-loader": "2.*",
+        "zendframework/zend-eventmanager": "2.*",
+        "zendframework/zend-mvc": "2.*",
+        "zendframework/zend-navigation": "2.*"
     },
     "suggest": {
         "bjyoungblood/bjy-authorize": "Access control to protect ZfcAdmin against unauthorized users"
