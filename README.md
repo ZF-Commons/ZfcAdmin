@@ -1,5 +1,5 @@
 # ZfcAdmin Module for Zend Framework 2
-Version 0.1.0 created by [Jurian Sluiman](http://juriansluiman.nl/en) and [Martin Shwalbe](https://github.com/Hounddog).
+Version 0.2.1 created by [Jurian Sluiman](http://juriansluiman.nl) and [Martin Shwalbe](https://github.com/Hounddog).
 
 ## Introduction
 ZfcAdmin is a minimal admin interface for generic administrative purposes. It is a common screen with navigation that hides behind authentication and authorization.
