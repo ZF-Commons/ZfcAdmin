@@ -40,42 +40,46 @@
  * @link        http://zf-commons.github.com
  */
 
-return array(
-    'controllers' => array(
-        'invokables' => array(
-            'ZfcAdmin\Controller\AdminController' => 'ZfcAdmin\Controller\AdminController',
-        ),
-    ),
-    'zfcadmin' => array(
-        'use_admin_layout'      => true,
+namespace ZfcAdmin;
+
+use Zend\ServiceManager\Factory\InvokableFactory;
+
+return [
+    'controllers' => [
+        'factories' => [
+            Controller\AdminController::class => InvokableFactory::class,
+            'admin_navigation' => Navigation\Service\AdminNavigationFactory::class,
+        ],
+    ],
+    'zfcadmin' => [
+        'use_admin_layout' => true,
         'admin_layout_template' => 'layout/admin',
-    ),
+    ],
 
-    'navigation' => array(
-        'admin' => array(),
-    ),
+    'navigation' => [
+        'admin' => [],
+    ],
 
-    'router' => array(
-        'routes' => array(
-            'zfcadmin' => array(
+    'router' => [
+        'routes' => [
+            'zfcadmin' => [
                 'type' => 'literal',
-                'options' => array(
-                    'route'    => '/admin',
-                    'defaults' => array(
-                        'controller' => 'ZfcAdmin\Controller\AdminController',
-                        'action'     => 'index',
-                    ),
-                ),
+                'options' => [
+                    'route' => '/admin',
+                    'defaults' => [
+                        'controller' => Controller\AdminController::class,
+                        'action' => 'index',
+                    ],
+                ],
                 'may_terminate' => true,
-            ),
-        ),
-    ),
+            ],
+        ],
+    ],
 
-    
 
-    'view_manager' => array(
-        'template_path_stack' => array(
-            __DIR__ . '/../view'
-        ),
-    ),
-);
+    'view_manager' => [
+        'template_path_stack' => [
+            __DIR__ . '/../view',
+        ],
+    ],
+];

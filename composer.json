@@ -19,22 +19,19 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
-        "zendframework/zend-modulemanager": "2.*",
-        "zendframework/zend-loader": "2.*",
-        "zendframework/zend-eventmanager": "2.*",
-        "zendframework/zend-mvc": "2.*",
-        "zendframework/zend-navigation": "2.*"
+        "php": "^5.5 || ^7.0",
+        "zendframework/zend-modulemanager": "^2.5",
+        "zendframework/zend-loader": "^2.5",
+        "zendframework/zend-eventmanager": "^2.5 || ^3.0",
+        "zendframework/zend-mvc": "^2.5 || ^3.0",
+        "zendframework/zend-navigation": "^2.5"
     },
     "suggest": {
         "bjyoungblood/bjy-authorize": "Access control to protect ZfcAdmin against unauthorized users"
     },
     "autoload": {
-        "psr-0": {
-            "ZfcAdmin": "src/"
-        },
-        "classmap": [
-            "./Module.php"
-        ]
+        "psr-4": {
+            "ZfcAdmin\\": "src/ZfcAdmin/"
+        }
     }
 }
