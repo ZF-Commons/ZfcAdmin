@@ -63,13 +63,13 @@ class Module implements
      */
     public function getAutoloaderConfig()
     {
-        return array(
-            Loader\AutoloaderFactory::STANDARD_AUTOLOADER => array(
-                Loader\StandardAutoloader::LOAD_NS => array(
+        return [
+            Loader\AutoloaderFactory::STANDARD_AUTOLOADER => [
+                Loader\StandardAutoloader::LOAD_NS => [
                     __NAMESPACE__ => __DIR__,
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
     }
 
     /**
@@ -100,6 +100,7 @@ class Module implements
      */
     public function selectLayoutBasedOnRoute(MvcEvent $e)
     {
+        /** @var \Zend\Mvc\Application $app */
         $app    = $e->getParam('application');
         $sm     = $app->getServiceManager();
         $config = $sm->get('config');
