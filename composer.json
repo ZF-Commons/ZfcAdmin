@@ -31,7 +31,15 @@
     },
     "autoload": {
         "psr-4": {
-            "ZfcAdmin\\": "src/ZfcAdmin/"
+            "ZfcAdmin\\": "src/"
+        }
+    },
+    "extra": {
+        "zf": {
+            "component": "ZfcAdmin",
+            "config-provider": [
+                "ZfcAdmin\\ConfigProvider"
+            ]
         }
     }
 }

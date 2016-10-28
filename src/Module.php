@@ -41,22 +41,19 @@
 
 namespace ZfcAdmin;
 
-use Zend\ModuleManager\Feature;
 use Zend\Loader;
 use Zend\EventManager\EventInterface;
 use Zend\Mvc\MvcEvent;
-use Zend\Mvc\Router\RouteMatch;
-use Zend\Router\RouteMatch as RouteMatchV3;
+use Zend\Mvc\Router\V2RouteMatch;
+use Zend\Router\RouteMatch as V3RouteMatch;
+use Zend\ServiceManager\Factory\InvokableFactory;
 
 /**
  * Module class for ZfcAdmin
  *
  * @package ZfcAdmin
  */
-class Module implements
-    Feature\AutoloaderProviderInterface,
-    Feature\ConfigProviderInterface,
-    Feature\BootstrapListenerInterface
+class Module
 {
     /**
      * @{inheritdoc}
@@ -77,7 +74,36 @@ class Module implements
      */
     public function getConfig()
     {
-        return include __DIR__ . '/../../config/module.config.php';
+        $provider = new ConfigProvider();
+
+        return [
+            'service_manager' => $provider->getDependencyConfig(),
+            'view_manager' => $provider->getViewManagerConfig(),
+            'zfcadmin' => $provider->getModuleConfig(),
+            'controllers' => [
+                'factories' => [
+                    Controller\AdminController::class => InvokableFactory::class,
+                ],
+            ],
+            'navigation' => [
+                'admin' => [],
+            ],
+            'router' => [
+                'routes' => [
+                    'zfcadmin' => [
+                        'type' => 'literal',
+                        'options' => [
+                            'route' => '/admin',
+                            'defaults' => [
+                                'controller' => Controller\AdminController::class,
+                                'action' => 'index',
+                            ],
+                        ],
+                        'may_terminate' => true,
+                    ],
+                ],
+            ],
+        ];
     }
 
     /**
@@ -89,7 +115,7 @@ class Module implements
         $app = $e->getParam('application');
         $em  = $app->getEventManager();
 
-        $em->attach(MvcEvent::EVENT_DISPATCH, array($this, 'selectLayoutBasedOnRoute'));
+        $em->attach(MvcEvent::EVENT_DISPATCH, [$this, 'selectLayoutBasedOnRoute']);
     }
 
     /**
@@ -111,7 +137,7 @@ class Module implements
 
         $match      = $e->getRouteMatch();
         $controller = $e->getTarget();
-        if (!($match instanceof RouteMatch || $match instanceof RouteMatchV3)
+        if (!($match instanceof V2RouteMatch || $match instanceof V3RouteMatch)
             || 0 !== strpos($match->getMatchedRouteName(), 'zfcadmin')
             || $controller->getEvent()->getResult()->terminate()
         ) {
