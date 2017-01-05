@@ -39,4 +39,4 @@
  * @link        http://zf-commons.github.com
  */
 
-include_once __DIR__ . '/src/ZfcAdmin/Module.php';
+include_once __DIR__ . '/src/Module.php';
