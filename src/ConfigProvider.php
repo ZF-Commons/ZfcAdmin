@@ -33,7 +33,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  *
  * @package     ZfcAdmin
- * @subpackage  Navigation\Service
  * @author      Jurian Sluiman <jurian@soflomo.com>
  * @copyright   2012 Jurian Sluiman.
  * @license     http://www.opensource.org/licenses/bsd-license.php  BSD License
