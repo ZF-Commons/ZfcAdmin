@@ -1,4 +1,4 @@
-# ZfcAdmin Module for Zend Framework 2
+# ZfcAdmin Module for Zend Framework
 Created by [Jurian Sluiman](http://juriansluiman.nl) and [Martin Shwalbe](https://github.com/Hounddog).
 
 ## Introduction
