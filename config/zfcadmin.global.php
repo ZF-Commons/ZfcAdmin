@@ -5,7 +5,7 @@
  * If you have a ./config/autoload/ directory set up for your project, you can
  * drop this config file in it and change the values as you wish.
  */
-$settings = array(
+$settings = [
     /**
      * Flag to use layout/admin as the admin layout
      *
@@ -31,35 +31,35 @@ $settings = array(
     /**
      * End of ZfcAdmin configuration
      */
-    
-);
+
+];
 
 /**
  * You do not need to edit below this line
  */
-return array(
+return [
     'zfcadmin' => $settings,
-   
+
     /**
      * Default BjyAuthorize configuration for ACL
-     */ 
-    'bjyauthorize' => array(
-        'guards' => array(
-            'BjyAuthorize\Guard\Route' => array(
-                array('route' => 'zfcadmin', 'roles' => array('admin')),
-            ),
-        ),
-    ),
+     */
+    'bjyauthorize' => [
+        'guards' => [
+            'BjyAuthorize\Guard\Route' => [
+                ['route' => 'zfcadmin', 'roles' => ['admin']],
+            ],
+        ],
+    ],
 
     /**
      * Default ZfcRbac configuration for RBAC
      */
-    'zfcrbac' => array(
+    'zfcrbac' => [
         'firewall_route' => true,
-        'firewalls' => array(
-            'ZfcRbac\Firewall\Route' => array(
-                'zfcadmin' => array('route' => '^zfcadmin/*', 'roles' => 'admin')
-            )
-        ),
-    ),
-);
+        'firewalls' => [
+            'ZfcRbac\Firewall\Route' => [
+                'zfcadmin' => ['route' => '^zfcadmin/*', 'roles' => 'admin'],
+            ],
+        ],
+    ],
+];
