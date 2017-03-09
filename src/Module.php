@@ -44,7 +44,7 @@ namespace ZfcAdmin;
 use Zend\Loader;
 use Zend\EventManager\EventInterface;
 use Zend\Mvc\MvcEvent;
-use Zend\Mvc\Router\V2RouteMatch;
+use Zend\Mvc\Router\RouteMatch as V2RouteMatch;
 use Zend\Router\RouteMatch as V3RouteMatch;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
