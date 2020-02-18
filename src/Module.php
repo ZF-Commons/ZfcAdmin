@@ -41,12 +41,12 @@
 
 namespace ZfcAdmin;
 
-use Zend\Loader;
-use Zend\EventManager\EventInterface;
-use Zend\Mvc\MvcEvent;
-use Zend\Mvc\Router\RouteMatch as V2RouteMatch;
-use Zend\Router\RouteMatch as V3RouteMatch;
-use Zend\ServiceManager\Factory\InvokableFactory;
+use Laminas\Loader;
+use Laminas\EventManager\EventInterface;
+use Laminas\Mvc\MvcEvent;
+use Laminas\Mvc\Router\RouteMatch as V2RouteMatch;
+use Laminas\Router\RouteMatch as V3RouteMatch;
+use Laminas\ServiceManager\Factory\InvokableFactory;
 
 /**
  * Module class for ZfcAdmin
@@ -111,7 +111,7 @@ class Module
      */
     public function onBootstrap(EventInterface $e)
     {
-        /** @var \Zend\Mvc\Application $app */
+        /** @var \Laminas\Mvc\Application $app */
         $app = $e->getParam('application');
         $em  = $app->getEventManager();
 
@@ -126,7 +126,7 @@ class Module
      */
     public function selectLayoutBasedOnRoute(MvcEvent $e)
     {
-        /** @var \Zend\Mvc\Application $app */
+        /** @var \Laminas\Mvc\Application $app */
         $app    = $e->getParam('application');
         $sm     = $app->getServiceManager();
         $config = $sm->get('config');

@@ -42,7 +42,7 @@
 
 namespace ZfcAdmin\Navigation\Service;
 
-use Zend\Navigation\Service\DefaultNavigationFactory;
+use Laminas\Navigation\Service\DefaultNavigationFactory;
 
 /**
  * Factory for the ZfcAdmin admin navigation
