@@ -22,8 +22,8 @@
         "php": "^5.5 || ^7.0",
         "zendframework/zend-modulemanager": "^2.5",
         "zendframework/zend-loader": "^2.5",
-        "zendframework/zend-eventmanager": "^2.5 || ^3.0",
-        "zendframework/zend-mvc": "^2.5 || ^3.0",
+        "zendframework/zend-eventmanager": "^3.0",
+        "zendframework/zend-mvc": "^3.0",
         "zendframework/zend-navigation": "^2.5"
     },
     "suggest": {
