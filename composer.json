@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "php": "^5.5 || ^7.0",
+        "php": "^5.5 || ^7.0 || ^8.0",
         "zendframework/zend-modulemanager": "^2.5",
         "zendframework/zend-loader": "^2.5",
         "zendframework/zend-eventmanager": "^3.0",
